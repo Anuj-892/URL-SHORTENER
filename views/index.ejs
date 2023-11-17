@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>NANO URL</title>
+</head>
+<body>
+   <div class="url-shortener">
+        <h1>NANO URL</h1>
+        <form action="/shortUrls" method="POST">
+            <label for="fullUrl"></label>
+            <input type="url" placeholder="Paste a URL" name="fullUrl" id="fullUrl"/>
+            <button type="submit">SHORTEN</button>
+        </form>
+
+        <% if (lastAddedItem) { %>
+            <div class="results">
+                <span>FULL URL- <a href="<%= lastAddedItem.full %>"><%= lastAddedItem.full %></a></span>
+                <span>SHORTENED URL- <a href="<%= lastAddedItem.short %>" target="_blank"><%= lastAddedItem.short %></a></span>
+            </div>
+        <% } %>
+   </div>
+</body>
+</html>
